@@ -6,6 +6,14 @@ public class PricingEngineMvp : IPricingEngine
 {
     public Money CalculatePrice(Duration duration, Money pricePerMinute)
     {
-        return duration.MultiplyByPricePerMinute(pricePerMinute);
+        
+        Money result = duration.MultiplyByPricePerMinute(pricePerMinute);
+
+        if (duration.IsOverTime)
+        {
+            result = Money.Add(new Money(100), result);
+        }
+
+        return result;
     }
 }

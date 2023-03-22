@@ -25,7 +25,9 @@ public class Duration
     {
         return new Duration(int.Parse(durationAsText));
     }
-    
+
+    public bool IsOverTime => this.minutes > 240;
+
     public Money MultiplyByPricePerMinute(Money pricePerMinute)
     {
         return pricePerMinute * this.minutes;
