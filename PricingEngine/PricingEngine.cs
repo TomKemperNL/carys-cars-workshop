@@ -2,7 +2,7 @@ using NodaMoney;
 
 namespace CarysCars.PricingEngine;
 
-public interface PricingEngine
+public interface IPricingEngine
 {
     Money CalculatePrice(Duration duration, Money pricePerMinute);
 }

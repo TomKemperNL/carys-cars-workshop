@@ -4,7 +4,7 @@ namespace CarysCars.PricingEngine;
 
 public class Duration
 {
-    private int minutes;
+    private readonly int minutes;
 
     private Duration(int minutes)
     {
@@ -23,7 +23,7 @@ public class Duration
 
     public static Duration FromString(string durationAsText)
     {
-        return new Duration(Int32.Parse(durationAsText));
+        return new Duration(int.Parse(durationAsText));
     }
     
     public Money MultiplyByPricePerMinute(Money pricePerMinute)
@@ -36,21 +36,27 @@ public class Duration
         return this.minutes.ToString();
     }
 
-    public override bool Equals(object? compareTo)
+    private bool Equals(Duration other)
     {
-        if (this.GetType().Equals(compareTo.GetType()))
-        {
-            Duration other = (Duration)compareTo;
+        return minutes == other.minutes;
+    }
 
-            return this.minutes == other.minutes;
-        }
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(null, obj)) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        return obj.GetType() == this.GetType() && Equals((Duration)obj);
+    }
 
-        return false;
+    public override int GetHashCode()
+    {
+        return minutes;
     }
 }
+
 public class SorryInvalidDurationProvided : Exception
 {
-    public SorryInvalidDurationProvided(string message) : base(message)
+    private SorryInvalidDurationProvided(string message) : base(message)
     {
     }
 
