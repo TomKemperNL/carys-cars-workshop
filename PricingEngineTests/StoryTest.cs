@@ -13,7 +13,7 @@ namespace CarysCars.PricingEngine;
 public class StoryTest
 {
     [Fact]
-    public void normalRide()
+    public void NormalRide()
     {
         double pricePerMinute = 0.24;
         int nrOfVehicles = 300;
