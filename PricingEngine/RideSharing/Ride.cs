@@ -1,6 +1,6 @@
 ﻿using NodaTime;
 
-namespace CarysCars.PricingEngine;
+namespace CarysCars.PricingEngine.RideSharing;
 
 public class Ride
 {

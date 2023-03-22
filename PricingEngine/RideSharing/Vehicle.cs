@@ -1,8 +1,8 @@
-﻿namespace CarysCars.PricingEngine;
+﻿namespace CarysCars.PricingEngine.RideSharing;
 
 public class Vehicle
 {
-    public Location Location { get; } = PricingEngine.Location.Random(100, 100);
+    public Location Location { get; } = Location.Random(100, 100);
 
     public Ride Reserve(Customer customer)
     {

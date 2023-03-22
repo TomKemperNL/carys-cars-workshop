@@ -1,6 +1,6 @@
 using NodaMoney;
 
-namespace CarysCars.PricingEngine;
+namespace CarysCars.PricingEngine.Pricing;
 
 public class PricingEngineMvp : IPricingEngine
 {

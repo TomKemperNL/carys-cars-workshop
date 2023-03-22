@@ -1,4 +1,4 @@
-﻿namespace CarysCars.PricingEngine;
+﻿namespace CarysCars.PricingEngine.RideSharing;
 
 public sealed class Location
 {

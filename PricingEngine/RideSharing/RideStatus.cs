@@ -1,4 +1,4 @@
-﻿namespace CarysCars.PricingEngine;
+﻿namespace CarysCars.PricingEngine.RideSharing;
 
 public enum RideStatus
 {
