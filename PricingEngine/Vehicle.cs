@@ -2,8 +2,10 @@
 
 public class Vehicle
 {
+    public Location Location { get; } = PricingEngine.Location.Random(100, 100);
+
     public Reservation Reserve(Customer customer)
     {
-        throw new NotImplementedException();
+        return new Reservation();
     }
 }

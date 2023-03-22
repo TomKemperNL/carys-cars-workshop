@@ -14,11 +14,13 @@ public class StoryTest
     public void normalRide()
     {
         double pricePerMinute = 0.24;
+        int nrOfVehicles = 300;
+        
         FakeTimeProvider.Instance.SetNow(new LocalDateTime(2020, 02, 14, 09, 00));
         Customer tom = new Customer("Tom");
-        Fleet fleet = Fleet.createDefault();
+        Fleet fleet = Fleet.createDefault(nrOfVehicles);
 
-        List<Vehicle> availableVehicles = fleet.locateVehicles(tom);
+        List<Vehicle> availableVehicles = fleet.LocateVehicles(tom);
         Reservation pending = availableVehicles[0].Reserve(tom);
         //Reach vehicle within 20 minutes:
         FakeTimeProvider.Instance.Advance(10);

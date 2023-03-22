@@ -4,8 +4,9 @@ public class Reservation
 {
     public Agreement Accept()
     {
-        throw new NotImplementedException();
+        this.Status = ReservationStatus.Accepted;
+        return new Agreement();
     }
 
-    public ReservationStatus Status { get; set; }
+    public ReservationStatus Status { get; private set; } = ReservationStatus.Pending;
 }

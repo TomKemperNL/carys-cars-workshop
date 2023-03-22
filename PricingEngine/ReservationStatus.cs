@@ -2,5 +2,7 @@
 
 public enum ReservationStatus
 {
+    Pending,
     Accepted
+    
 }

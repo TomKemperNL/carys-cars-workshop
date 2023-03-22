@@ -6,9 +6,9 @@ public class Agreement
 {
     public void ReturnCar()
     {
-        throw new NotImplementedException();
+        this.Status = AgreementStatus.Completed;
     }
 
-    public AgreementStatus Status { get; }
+    public AgreementStatus Status { get; private set; }
     public Money AmountDue { get; }
 }
