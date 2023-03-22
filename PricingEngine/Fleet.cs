@@ -7,7 +7,8 @@ public class Fleet
         return new Fleet();
     }
 
-    public Reservation locateVehicle(Customer customer)
+
+    public List<Vehicle> locateVehicles(Customer tom)
     {
         throw new NotImplementedException();
     }

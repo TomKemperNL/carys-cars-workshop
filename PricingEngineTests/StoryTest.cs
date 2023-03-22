@@ -1,4 +1,5 @@
-﻿using NodaMoney;
+﻿using System.Collections.Generic;
+using NodaMoney;
 using NodaTime;
 
 namespace CarysCars.PricingEngine;
@@ -17,7 +18,8 @@ public class StoryTest
         Customer tom = new Customer("Tom");
         Fleet fleet = Fleet.createDefault();
 
-        Reservation pending = fleet.locateVehicle(tom);
+        List<Vehicle> availableVehicles = fleet.locateVehicles(tom);
+        Reservation pending = availableVehicles[0].Reserve(tom);
         //Reach vehicle within 20 minutes:
         FakeTimeProvider.Instance.Advance(10);
 
@@ -29,7 +31,8 @@ public class StoryTest
 
         Assert.Equal(ReservationStatus.Accepted, pending.Status);
         Assert.Equal(AgreementStatus.Completed, agreed.Status);
-        
         Assert.Equal(new Money(60 * 0.24), agreed.AmountDue);
     }
+    
+    
 }
