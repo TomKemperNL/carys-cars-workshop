@@ -1,6 +1,6 @@
 using NodaMoney;
 
-namespace pricing_engine;
+namespace CarysCars.PricingEngine;
 
 public class PricingEngineTest
 {

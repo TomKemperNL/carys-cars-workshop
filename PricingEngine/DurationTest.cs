@@ -1,4 +1,4 @@
-namespace pricing_engine;
+namespace CarysCars.PricingEngine;
 
 public class DurationTest
 {
