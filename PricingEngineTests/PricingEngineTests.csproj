@@ -6,7 +6,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>CarysCars.PricingEngineTests</RootNamespace>
+        <RootNamespace>CarysCars.PricingEngine</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
